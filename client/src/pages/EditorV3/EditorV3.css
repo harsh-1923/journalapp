@@ -1,0 +1,42 @@
+.editorv3-wrapper {
+  background-color: #0e3421;
+  color: #edfaed;
+  width: 100vw;
+  height: 200vh;
+  /* padding: 16px; */
+}
+
+.editorv3-navbar-wrapper {
+  border: 1px solid white;
+  min-width: 100px;
+  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0px 10px;
+}
+
+.editorv3-content-window {
+  padding: 16px;
+}
+
+.editorv3-title-text {
+  font-size: 3rem;
+  opacity: 0.8;
+  outline: none;
+}
+
+.btn {
+  color: red;
+}
+
+.drop-down-btn {
+  width: 40px;
+  height: 40px;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+}

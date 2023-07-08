@@ -21,6 +21,13 @@ const HomePage = () => {
       >
         EditorV2
       </button>
+      <button
+        onClick={() => {
+          navigate("/editorv3");
+        }}
+      >
+        EditorV3
+      </button>
     </div>
   );
 };
