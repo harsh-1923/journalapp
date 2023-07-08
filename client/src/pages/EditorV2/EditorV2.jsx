@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 // import SpeechRecognition, {
 //   useSpeechRecognition,
 // } from "react-speech-recognition";
@@ -14,6 +14,8 @@ const EditorV2 = () => {
       content: "",
     },
   ]);
+  const [focusedBlockIndex, setFocusedBlockIndex] = useState(-1);
+  const newBlockRef = useRef(null);
 
   const handleContentChange = (e) => {
     e.preventDefault();
@@ -25,7 +27,18 @@ const EditorV2 = () => {
       type: "text",
       content: "",
     };
-    setBlocks([...blocks, newBlock]);
+    // console.log(focusedBlockIndex, "focused");
+    // setBlocks([...blocks, newBlock]);
+    setBlocks((prevBlocks) => {
+      console.log(prevBlocks, "prevBlock");
+      const updatedBlocks = [...prevBlocks];
+      if (focusedBlockIndex >= 0) {
+        updatedBlocks.splice(focusedBlockIndex + 1, 0, newBlock);
+      } else {
+        updatedBlocks.push(newBlock);
+      }
+      return updatedBlocks;
+    });
   };
 
   const addImageBlock = () => {
@@ -83,6 +96,10 @@ const EditorV2 = () => {
               className={`block ${block.type}`}
               contentEditable="true"
               suppressContentEditableWarning={true}
+              onFocus={() => {
+                setFocusedBlockIndex(index);
+                console.log(index, " in focus");
+              }}
               onBlur={(e) => handleBlockChange(index, e.target.textContent)}
             >
               {block.content}
