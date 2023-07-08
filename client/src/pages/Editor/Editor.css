@@ -1,0 +1,37 @@
+.editor-wrapper {
+  background-color: beige;
+  width: 100vw;
+  height: 100vh;
+  padding: 16px;
+}
+
+.journal-title {
+  outline: none;
+  font-size: 2.5rem;
+  opacity: 0.6;
+}
+
+.jounal-content {
+  opacity: 0.5;
+  outline: none;
+}
+
+.options-bar-wrapper {
+  position: fixed;
+  bottom: 10px;
+  height: 40px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: black; */
+  outline: black;
+  border: 1px solid red;
+  z-index: 999999;
+  /* margin: 10px; */
+}
+
+.block {
+  border: 1px solid black;
+  margin-top: 10px;
+}
